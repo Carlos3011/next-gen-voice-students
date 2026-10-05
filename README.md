@@ -1,4 +1,4 @@
-# 🤖 Taller ADK — Desarrollo de Agentes con Gemini
+# 🤖 Next-Gen Voice AI: El Poder del Audio Nativo en Tiempo Real
 
 Taller práctico de 3 horas para construir agentes de IA usando Google ADK y Gemini.
 
