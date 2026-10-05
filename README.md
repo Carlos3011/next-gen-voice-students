@@ -64,3 +64,33 @@ Abrir **http://localhost:8000** en el navegador.
 - [ ] Ejecutar `.\setup.ps1` (Win) o `make setup` (Mac/Linux)
 - [ ] Tener API Key en `.env`
 - [ ] Verificar con `uv run adk web .` → abre en el navegador
+## 🛠️ Solución de Problemas Frecuentes (Troubleshooting)
+
+### 🪟 Windows
+
+**1. Error: "No se puede cargar el archivo setup.ps1 porque la ejecución de scripts está deshabilitada"**
+*   **Por qué pasa:** Windows bloquea la ejecución de scripts por seguridad.
+*   **Solución:** Ejecuta el comando forzando el salto de la política de seguridad:
+    ```powershell
+    powershell -ExecutionPolicy ByPass -File .\setup.ps1
+    ```
+
+**2. Error: "uv : El término 'uv' no se reconoce" (Justo después de instalar)**
+*   **Por qué pasa:** La terminal actual no ha recargado las variables de entorno.
+*   **Solución:** **Cierra por completo la ventana de tu terminal**, abre una nueva y vuelve a intentar el comando.
+
+### 🍎 Mac / Linux
+
+**1. Error: "make: command not found"**
+*   **Por qué pasa:** Tu Mac no tiene instaladas las herramientas de consola básicas.
+*   **Solución:** Abre la terminal y ejecuta `xcode-select --install`. Cuando termine, vuelve a intentar `make setup`.
+
+### 🌐 Generales (Cualquier Sistema)
+
+**1. Error en la interfaz: "403 PERMISSION_DENIED" o "API_KEY_SERVICE_BLOCKED"**
+*   **Por qué pasa:** Elegiste un proyecto viejo en Google Cloud al crear tu API Key y no tiene Gemini habilitado.
+*   **Solución:** Regresa a [Google AI Studio](https://aistudio.google.com/app/apikey), haz clic en crear clave y elige **ESTRICTAMENTE** la opción **"Create API key in new project"**. Pega esa nueva clave en tu `.env` y reinicia el servidor.
+
+**2. Error en la interfaz: "503 UNAVAILABLE - This model is experiencing high demand"**
+*   **Por qué pasa:** Tráfico mundial alto momentáneo en la capa gratuita. Tu código y configuración están perfectos.
+*   **Solución:** Literalmente solo espera 30 a 60 segundos y vuelve a enviarle el mensaje al agente.
