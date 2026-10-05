@@ -1,21 +1,9 @@
 # 🤖 Next-Gen Voice AI: El Poder del Audio Nativo en Tiempo Real
 
-Taller práctico de 3 horas para construir agentes de IA usando Google ADK y Gemini.
+Este proyecto contiene el código fuente de los agentes construidos con **Google ADK** y **Gemini**.
 
-## ⚡ Setup rápido
+## 🛠️ Tecnologías
 
-### Windows
-```powershell
-.\setup.ps1
-```
-
-### macOS / Linux
-```bash
-make setup
-```
-
-Eso es todo. El script instala automáticamente:
-- ✅ `uv` (gestor de paquetes)
 - ✅ Python 3.12
 - ✅ `google-adk` (dependencia única)
 
@@ -36,34 +24,26 @@ GOOGLE_API_KEY=AIzaSyTuClaveAqui...
 
 ## 🚀 Correr las prácticas
 
-```bash
-# Abrir el playground con todas las prácticas
-make run          # macOS/Linux
-uv run adk web .  # Windows
+Puedes arrancar la interfaz web para probar cada práctica. Abre tu terminal y ejecuta:
 
-# O correr una práctica específica
-make run-1        # Práctica 1: Agente básico
-make run-2        # Práctica 2: Agente + Tools
-make run-3        # Práctica 3: Multi-agente
-make run-4        # Práctica 4: Agente de voz
+```powershell
+# Levanta el entorno con todas las prácticas
+uv run adk web .
 ```
 
-Abrir **http://localhost:8000** en el navegador.
+### Temario del Taller
 
-## 📂 Estructura
+1. **Práctica 1: Básico** (`practica_1_basico/`)
+   - Cómo inicializar un Agente, definir un modelo y escribir tu primer *System Prompt*.
+2. **Práctica 2: Tools** (`practica_2_tools/`)
+   - *Function Calling*: Cómo darle herramientas (funciones Python) a tu agente para que consulte datos reales de tu ciudad en México.
+3. **Práctica 3: Workflow Multi-Agente** (`practica_3_workflow/`)
+   - Cómo conectar varios agentes en cadena (`SequentialAgent`) pasándose contexto entre ellos.
+4. **Práctica 4: Configuración Avanzada** (`practica_4_avanzado/`)
+   - Ajuste de tokens, nivel de creatividad (temperatura) y configuración estricta de *Safety Settings* (Seguridad).
+5. **Práctica 5: Agente de Voz Nativo** (`practica_5_voz/`)
+   - El gran final: Uso de la *Live API* (`gemini-3.8-live`) para hablar en tiempo real con latencia casi nula.
 
-```
-├── practica_1_basico/    🟢 Agente básico (30 min)
-├── practica_2_tools/     🔵 Agente + Tools (45 min)
-├── practica_3_multi/     🟣 Multi-agente (45 min)
-└── practica_4_voz/       🔴 Agente de voz (30 min)
-```
-
-## 📋 Checklist pre-taller
-
-- [ ] Ejecutar `.\setup.ps1` (Win) o `make setup` (Mac/Linux)
-- [ ] Tener API Key en `.env`
-- [ ] Verificar con `uv run adk web .` → abre en el navegador
 ## 🛠️ Solución de Problemas Frecuentes (Troubleshooting)
 
 ### 🪟 Windows
